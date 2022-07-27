@@ -22,4 +22,14 @@ RSpec.describe ToyRobot::Robot do
     4.times { subject.move_west }
     expect(subject.east).to eq(-4)
   end
+
+  it "moves 3 spaces north" do
+    3.times { subject.move_north }
+    expect(subject.north).to eq(3)
+  end
+
+  it "moves 4 spaces north" do
+    4.times { subject.move_north }
+    expect(subject.north).to eq(4)
+  end
 end
