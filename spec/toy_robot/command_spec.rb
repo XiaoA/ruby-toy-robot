@@ -13,4 +13,12 @@ RSpec.describe ToyRobot::Command do
       expect(command).to eq([:invalid, "PLACE 1, 2, NORTH"])
     end
   end
+
+  context "MOVE" do
+    it "processes the command" do
+      command, *args = ToyRobot::Command.process("MOVE")
+      expect(command).to eq(:move)
+      expect(args).to be_empty
+    end
+  end
 end
