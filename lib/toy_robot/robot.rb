@@ -6,7 +6,7 @@ module ToyRobot
       @position = position
     end
 
-    def move
+    def move_east
       @position += 1
     end
   end
