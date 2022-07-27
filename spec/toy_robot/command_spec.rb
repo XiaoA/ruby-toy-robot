@@ -8,5 +8,9 @@ RSpec.describe ToyRobot::Command do
       expect(args).to eq([1, 2, "NORTH"])
     end
 
+    it "returns :invalid for an invalid PLACE command" do
+      command = ToyRobot::Command.process("PLACE 1, 2, NORTH")
+      expect(command).to eq([:invalid, "PLACE 1, 2, NORTH"])
+    end
   end
 end
