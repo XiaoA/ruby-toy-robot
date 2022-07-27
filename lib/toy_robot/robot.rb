@@ -31,11 +31,19 @@ module ToyRobot
     end
 
     def turn_left
-      @direction = DIRECTIONS[DIRECTIONS.index(@direction) - 1]
+      turn(:left)
     end
 
     def turn_right
-      @direction = DIRECTIONS[DIRECTIONS.index(@direction) + 1]
+      turn(:right)
+    end
+
+    private
+
+    def turn(turn_direction)
+      index = DIRECTIONS.index(@direction)
+      rotations = turn_direction == :right ? 1 : -1
+      @direction = DIRECTIONS.rotate(rotations)[index]
     end
   end
 end
