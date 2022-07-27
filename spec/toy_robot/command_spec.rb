@@ -21,4 +21,28 @@ RSpec.describe ToyRobot::Command do
       expect(args).to be_empty
     end
   end
+
+  context "LEFT" do
+    it "processes the command" do
+      command, *args = ToyRobot::Command.process("LEFT")
+      expect(command).to eq(:turn_left)
+      expect(args).to be_empty
+    end
+  end
+
+  context "RIGHT" do
+    it "processes the command" do
+      command, *args = ToyRobot::Command.process("RIGHT")
+      expect(command).to eq(:turn_right)
+      expect(args).to be_empty
+    end
+  end
+
+  context "REPORT" do
+    it "processes the command" do
+      command, *args = ToyRobot::Command.process("REPORT")
+      expect(command).to eq(:report)
+      expect(args).to be_empty
+    end
+  end
 end
