@@ -25,12 +25,7 @@ module ToyRobot
     end
 
     def move
-      case @direction
-      when "NORTH" then move_north
-      when "SOUTH" then move_south
-      when "EAST" then move_east
-      when "WEST" then move_west
-      end
+      send("move_#{@direction.downcase}")
     end
   end
 end
