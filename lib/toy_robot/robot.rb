@@ -9,5 +9,9 @@ module ToyRobot
     def move_east
       @position += 1
     end
+
+    def move_west
+      @position -=1
+    end
   end
 end
