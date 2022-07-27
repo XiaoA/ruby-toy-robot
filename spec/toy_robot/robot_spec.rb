@@ -42,4 +42,22 @@ RSpec.describe ToyRobot::Robot do
     4.times { subject.move_south }
     expect(subject.north).to eq(-4)
   end
+
+  context "when facting north" do
+    subject { ToyRobot::Robot.new(0, 0, "NORTH") }
+
+    it "moves north" do
+      subject.move
+      expect(subject.north).to eq(1)
+    end
+  end
+
+  context "when facting south" do
+    subject { ToyRobot::Robot.new(0, 0, "SOUTH") }
+
+    it "moves south" do
+      subject.move
+      expect(subject.north).to eq(-1)
+    end
+  end
 end
