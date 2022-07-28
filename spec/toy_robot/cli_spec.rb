@@ -30,5 +30,12 @@ RSpec.describe ToyRobot::CLI do
         subject.run([[:place, 0, 0, "NORTH"]])
       end
     end
+
+    context "move command" do
+      it "passes the command to the simulator" do
+        expect(simulator).to receive(:move)
+        subject.run([[:move]])
+      end
+    end
   end
 end
