@@ -23,6 +23,13 @@ RSpec.describe ToyRobot::CLI do
     before do
       allow(subject).to receive(:simulator) { simulator }
     end
+
+    context "left command" do
+      it "passes the command to the simulator" do
+        expect(simulator).to receive(:turn_left)
+        subject.run([[:turn_left]])
+      end
+    end
     
     context "place command" do
       it "passes a place command to the simulator" do
@@ -38,27 +45,27 @@ RSpec.describe ToyRobot::CLI do
       end
     end
 
-    context "run" do
-      context "left command" do
-        it "passes the command to the simulator" do
-          expect(simulator).to receive(:turn_left)
-          subject.run([[:turn_left]])
-        end
+    # context "run" do
+    #   context "left command" do
+    #     it "passes the command to the simulator" do
+    #       expect(simulator).to receive(:turn_left)
+    #       subject.run([[:turn_left]])
+    #     end
+    #   end
+    
+    context "right command" do
+      it "passes the command to the simulator" do
+        expect(simulator).to receive(:turn_right)
+        subject.run([[:turn_right]])
       end
-      
-      context "right command" do
-        it "passes the command to the simulator" do
-          expect(simulator).to receive(:turn_right)
-          subject.run([[:turn_right]])
-        end
-      end
+    end
 
-      context "report command" do
-        it "passes the command to the simulator" do
-          expect(simulator).to receive(:report)
-          subject.run([[:report]])
-        end
+    context "report command" do
+      it "passes the command to the simulator" do
+        expect(simulator).to receive(:report)
+        subject.run([[:report]])
       end
     end
   end
 end
+

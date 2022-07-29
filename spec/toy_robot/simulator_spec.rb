@@ -50,7 +50,8 @@ RSpec.describe ToyRobot::Simulator do
     end
     
     it "tells the robot to report" do
-      expect(robot).to receive(:report)
+      expect(robot).to receive(:report) { { north: 3, east: 3,
+                                            direction: "NORTH" } }
       subject.report
     end
   end
