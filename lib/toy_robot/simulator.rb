@@ -11,5 +11,23 @@ module ToyRobot
 
       @robot = Robot.new(east, north, facing)
     end
+
+    def move
+      robot.move
+    end
+
+    def turn_left
+      robot.turn_left
+    end
+
+    def turn_right
+      robot.turn_right
+    end
+
+    def report
+      position = robot.report
+      puts "Robot is currently at (#{position[:north]}, #{position[:east]})" +
+           " and it's facing #{position[:direction]}"
+    end
   end
 end
