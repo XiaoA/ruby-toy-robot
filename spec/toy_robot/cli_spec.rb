@@ -45,14 +45,6 @@ RSpec.describe ToyRobot::CLI do
       end
     end
 
-    # context "run" do
-    #   context "left command" do
-    #     it "passes the command to the simulator" do
-    #       expect(simulator).to receive(:turn_left)
-    #       subject.run([[:turn_left]])
-    #     end
-    #   end
-    
     context "right command" do
       it "passes the command to the simulator" do
         expect(simulator).to receive(:turn_right)
@@ -68,4 +60,5 @@ RSpec.describe ToyRobot::CLI do
     end
   end
 end
+
 
